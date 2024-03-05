@@ -140,6 +140,8 @@ class HelloController {
         }
         labelID.text = "Pregunta6"
     }
+
+    //Cuando pulsas el boton para guardar respuesta, esta es la funcion que se ejecuta
     @FXML
     private fun guardarResposta() {
         val answerList = listOf("6respuesta1","6respuesta2","6respuesta3","6respuesta4")
