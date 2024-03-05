@@ -220,8 +220,7 @@ class HelloController {
             // Mostrar el mensaje final
             labelID.text = "$mensajePersonaje. Test finalizado. Gracias por participar."
 
-            // Mostrar el mensaje final
-            labelID.text = "$mensajePersonaje. Test finalizado. Gracias por participar."
+
 
             // Cambiar texto del botón a "Salir" y actualizar la acción para cerrar la aplicación
             btnAnswer.text = "Salir"
