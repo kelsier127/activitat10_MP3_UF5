@@ -144,14 +144,19 @@ class HelloController {
     //Cuando pulsas el boton para guardar respuesta, esta es la funcion que se ejecuta
     @FXML
     private fun guardarResposta() {
-        val answerList = listOf("6respuesta1","6respuesta2","6respuesta3","6respuesta4")
-        val list = listOf(lostRadioButton,isaacRadioButton,judasRadioButton,keeperRadioButton)
-        for (i in list.indices) {
-            list[i].isVisible = true
-            list[i].toggleGroup = toggleGroup
-            list[i].text = answerList[i]
-            list[i].isSelected = false
+        // Verificar qué RadioButton está seleccionado y actualizar la cuenta correspondiente
+        val selectedRadioButton = toggleGroup.selectedToggle as RadioButton?
+        when (selectedRadioButton) {
+            lostRadioButton -> lost++
+            isaacRadioButton -> isaac++
+            judasRadioButton -> judas++
+            keeperRadioButton -> keeper++
         }
-        labelID.text = "Pregunta6"
+
+        // Reiniciar la selección para la siguiente pregunta
+        toggleGroup.selectedToggle?.isSelected = false
+
+        // Actualizar mensaje en la interfaz para informar al usuario
+        labelID.text = "Respuesta guardada. Selecciona otra pregunta."
     }
 }
