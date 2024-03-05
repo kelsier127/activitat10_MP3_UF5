@@ -140,4 +140,16 @@ class HelloController {
         }
         labelID.text = "Pregunta6"
     }
+    @FXML
+    private fun guardarResposta() {
+        val answerList = listOf("6respuesta1","6respuesta2","6respuesta3","6respuesta4")
+        val list = listOf(lostRadioButton,isaacRadioButton,judasRadioButton,keeperRadioButton)
+        for (i in list.indices) {
+            list[i].isVisible = true
+            list[i].toggleGroup = toggleGroup
+            list[i].text = answerList[i]
+            list[i].isSelected = false
+        }
+        labelID.text = "Pregunta6"
+    }
 }
